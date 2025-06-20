@@ -1,0 +1,7 @@
+flowchart TD
+    A["User submits a question"] --> B["Embed the query"]
+    B --> C["Search in Vector DB (Top-k)"]
+    C --> D["Retrieve matching document chunks"]
+    D --> E["Send context + query to LLM"]
+    E --> F["LLM generates grounded response"]
+    F --> G["Return final answer to user"]
