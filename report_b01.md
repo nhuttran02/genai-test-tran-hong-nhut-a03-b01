@@ -1,12 +1,8 @@
 ---
-
-## title: report\_b01
-
+title: vector_database_tutorial
 ---
 
 ## Vector Database Fundamentals
-
----
 
 ### What is a Vector Database?
 
@@ -125,14 +121,13 @@
 
 #### Basic Workflow
 
-* Initialize DB:
-
+* Initialize ChromaDB:
   ```python
-  from langchain.vectorstores import Chroma
-  from langchain.embeddings import OpenAIEmbeddings
+  from langchain_community.vectorstores import Chroma
+  from langchain_community.embeddings import OpenAIEmbeddings
 
-  embedding = OpenAIEmbeddings()
-  db = Chroma(persist_directory="db", embedding_function=embedding)
+  embedding_function = OpenAIEmbeddings()
+  db = Chroma(embedding_function=embedding_function)
   ```
 
 * Add documents:
@@ -206,4 +201,29 @@
 
 ---
 
+</details>
+
+---
+## Terminology
+---
+
+### Key Terms in Vector Databases
+
+<details open>
+<summary>Glossary of terms used in Task B01</summary>
+
+---
+
+- **Vector**: A list of numerical values representing features of data (e.g., text, image).
+- **Embedding**: Process of converting data into vector representations using a model.
+- **Vector Database**: A system that stores and retrieves vector embeddings based on similarity.
+- **Similarity Search**: Finding vectors that are closest to a query vector in vector space.
+- **ANN (Approximate Nearest Neighbor)**: Technique for fast, approximate vector search.
+- **HNSW (Hierarchical Navigable Small World)**: A popular ANN algorithm for fast search.
+- **FAISS**: Facebook AI Similarity Search – a library for efficient similarity search.
+- **ChromaDB**: Lightweight, open-source vector DB optimized for LLM and local use.
+- **Weaviate**: Scalable vector database with hybrid search and REST/GraphQL APIs.
+- **Pinecone**: Fully-managed vector DB platform for production-scale GenAI applications.
+
+---
 </details>
